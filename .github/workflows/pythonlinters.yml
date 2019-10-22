@@ -25,7 +25,7 @@ jobs:
       run: |
         pip install flake8
         flake8 . --count --show-source --statistics
-    - name: Lint with blake
+    - name: Lint with black
       run: |
         pip install --pre black
         black .
