@@ -26,11 +26,7 @@ jobs:
     - name: Report Ansible version
       run: ansible --version
 
-    - name: Build the collection
-      run: ansible-galaxy collection build
-
-    # - name: Deploy the collection
-    #   run: ansible-galaxy collection publish ./artis3n.github_version-$PACKAGEID.tar.gz --api-key=${{ secrets.GALAXY_API_KEY }}
-    #   env:
-    #     PACKAGEID: $(sed 's/refs\/tags\/v//' <<< "$GITHUB_REF")
-    #   if: success()
+    - name: Deploy the collection
+      uses: artis3n/ansible_galaxy_collection@v1.0.0
+      with:
+        api_key: ${{ secrets.GALAXY_API_KEY }}
