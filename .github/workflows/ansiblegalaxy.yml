@@ -27,6 +27,6 @@ jobs:
       run: ansible --version
 
     - name: Deploy the collection
-      uses: artis3n/ansible_galaxy_collection@v1.0.0
+      uses: artis3n/ansible_galaxy_collection@v1.0.1
       with:
         api_key: ${{ secrets.GALAXY_API_KEY }}
