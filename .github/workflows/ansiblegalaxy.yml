@@ -26,3 +26,4 @@ jobs:
 
 #     - name: Deploy the collection
 #       run: ansible galaxy collection publish ./artis3n.github_version-<VERSION>.tar.gz --api-key={{ secrets.GALAXY_API_KEY }}
+#       if: success()
