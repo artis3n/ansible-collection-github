@@ -29,8 +29,8 @@ jobs:
     - name: Build the collection
       run: ansible-galaxy collection build
 
-    - name: Deploy the collection
-      run: ansible-galaxy collection publish ./artis3n.github_version-$PACKAGEID.tar.gz --api-key=${{ secrets.GALAXY_API_KEY }}
-      env:
-        PACKAGEID: $(sed 's/refs\/tags\///' <<< "$GITHUB_REF")
-      if: success()
+    # - name: Deploy the collection
+    #   run: ansible-galaxy collection publish ./artis3n.github_version-$PACKAGEID.tar.gz --api-key=${{ secrets.GALAXY_API_KEY }}
+    #   env:
+    #     PACKAGEID: $(sed 's/refs\/tags\/v//' <<< "$GITHUB_REF")
+    #   if: success()
