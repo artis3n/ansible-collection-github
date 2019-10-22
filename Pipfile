@@ -6,9 +6,14 @@ verify_ssl = true
 [dev-packages]
 ansible-lint = "*"
 pre-commit = "*"
+flake8 = "*"
+black = "*"
 
 [packages]
 ansible = "*"
 
 [requires]
 python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true

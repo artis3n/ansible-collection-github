@@ -62,7 +62,7 @@ Here's a longer example to demonstrate the benefit of this plugin to download th
 
 ### Contributing
 
-This repository welcomes contributions. Please fork this repository and file a pull request to the master branch. Your changes must include tests in the `tests/` directory.
+This repository welcomes contributions. Please fork this repository and file a pull request to the master branch. Your changes must include tests in the `tests/` directory. Run your code through `flake8` and `black` before creating the pull-request.
 
 ### Publishing a new version
 
