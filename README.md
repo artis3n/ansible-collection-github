@@ -1,4 +1,4 @@
-# github_version-ansible_plugin
+# github_version
 
 This collection includes a single lookup plugin that returns the latest tagged release version of a public Github repository.
 A future version will support a Github token as an environment variable to work against private repositories.
