@@ -12,8 +12,7 @@ repos:
     -   id: sort-simple-yaml
     -   id: flake8
     -   id: no-commit-to-branch
-        args:
-          - -b master
+        args: [--branch, master]
 
 - repo: https://github.com/ansible/ansible-lint
   rev: v4.1.1a0
