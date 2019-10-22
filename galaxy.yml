@@ -1,0 +1,18 @@
+---
+
+namespace: artis3n
+name: github_version
+version: 1.0.0
+readme: README.md
+authors:
+  - Ari Kalfus (@artis3n) <dev@quantummadness.com>
+description: This lookup returns the latest tagged release version of a Github repository.
+license_file: LICENSE
+dependencies: { }
+tags:
+  - github
+  - repository
+  - version
+repository: https://github.com/artis3n/github_version-ansible_plugin
+documentation: https://github.com/artis3n/github_version-ansible_plugin
+issues: https://github.com/artis3n/github_version-ansible_plugin/issues
