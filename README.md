@@ -1,5 +1,7 @@
 # github_version
 
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fartis3n%2Fgithub_version-ansible_plugin%2Fbadge&style=flat)](https://actions-badge.atrox.dev/artis3n/github_version-ansible_plugin/goto)
+
 This collection includes a single lookup plugin that returns the latest tagged release version of a public Github repository.
 A future version will support a Github token as an environment variable to work against private repositories.
 
