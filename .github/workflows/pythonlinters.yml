@@ -27,5 +27,5 @@ jobs:
         flake8 . --count --show-source --statistics
     - name: Lint with blake
       run: |
-        pip install --pre blake
+        pip install --pre black
         black .
