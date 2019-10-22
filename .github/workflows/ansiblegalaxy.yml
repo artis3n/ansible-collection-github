@@ -24,6 +24,11 @@ jobs:
     - name: Build the collection
       run: ansible-galaxy collection build
 
+<<<<<<< HEAD
     - name: Deploy the collection
       run: ansible-galaxy collection publish ./artis3n.github_version-*.tar.gz --api-key={{ secrets.GALAXY_API_KEY }}
       if: success()
+=======
+#     - name: Deploy the collection
+#       run: ansible galaxy collection publish ./artis3n.github_version-<VERSION>.tar.gz --api-key={{ secrets.GALAXY_API_KEY }}
+>>>>>>> Working on Github Action to publish to Galaxy
