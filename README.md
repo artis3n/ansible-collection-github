@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fartis3n%2Fgithub_version-ansible_plugin%2Fbadge&style=flat)](https://actions-badge.atrox.dev/artis3n/github_version-ansible_plugin/goto)
 
-You can find this collection on Ansible Galaxy [here[(https://galaxy.ansible.com/artis3n/github_version).
+You can find this collection on Ansible Galaxy [here](https://galaxy.ansible.com/artis3n/github_version).
 
 This collection includes a single lookup plugin that returns the latest tagged release version of a public Github repository.
 A future version will support a Github token as an environment variable to work against private repositories.
@@ -31,7 +31,9 @@ Then you can use the lookup plugin in your playbooks. Yes, it is verbose and gro
 
 Note: `[1:]` is used to strip out the `v` in the version tag, e.g. `v1.1.0` becomes `1.1.0`.
 
-Here's a longer example to demonstrate the benefit of this plugin to download the latest released Terraform version by validating its checksum:
+<br>
+
+<details><summary>Here's a longer example to demonstrate the benefit of this plugin to download the latest released Terraform version by validating its checksum:</summary>
 
 ```yaml
 - name: Terraform | Get latest release
@@ -67,6 +69,7 @@ Here's a longer example to demonstrate the benefit of this plugin to download th
     checksum: sha256:{{ terraform_sha_string.split(' ')[0] }}
   register: terraform_download
 ```
+</details>
 
 ## Development
 
