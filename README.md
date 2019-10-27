@@ -75,6 +75,7 @@ Note: `[1:]` is used to strip out the `v` in the version tag, e.g. `v1.1.0` beco
 
 ### TODO
 
+- [ ] Tests :grimacing:
 - [ ] Support Github tokens for private repository lookups
 
 ### Contributing
