@@ -10,7 +10,7 @@ DOCUMENTATION = r"""
 lookup: github_version
 author:
   - Ari Kalfus (@artis3n) <dev@quantummadness.com>
-version_added: "2.10"
+version_added: "2.9"
 requirements:
   - json
   - re
@@ -37,7 +37,7 @@ seealso:
 EXAMPLES = r"""
 - name: Strip the 'v' out of the tag version, e.g. 'v1.0.0' -> '1.0.0'
   set_fact:
-    nvm_version: "{{ lookup('github_version', 'ansible/ansible')[1:] }}"
+    ansible_version: "{{ lookup('github_version', 'ansible/ansible')[1:] }}"
 
 - name: Operate on multiple repositories
   git:
@@ -57,10 +57,10 @@ RETURN = r"""
     type: list
 """
 
-from ansible.errors import AnsibleError, AnsibleParserError
+from ansible.errors import AnsibleLookupError, AnsibleParserError
 from ansible.plugins.lookup import LookupBase
 from ansible.utils.display import Display
-from ansible.module_utils._text import to_native
+from ansible.module_utils._text import to_native, to_text
 from ansible.module_utils.urls import open_url
 
 from json import JSONDecodeError, loads
@@ -84,9 +84,9 @@ class LookupModule(LookupBase):
             valid_github_username_and_repo_name = regex_compile(r"[a-z\d\-]+\/[a-z\d\S]+")
             if not repo or not valid_github_username_and_repo_name.match(repo):
                 # The Parser error indicates invalid options passed
-                raise AnsibleParserError("repo name is incorrectly formatted: %s" % repo)
+                raise AnsibleParserError("repo name is incorrectly formatted: %s" % to_text(repo))
 
-            display.debug("Github version lookup term: '%s'" % repo)
+            display.debug("Github version lookup term: '%s'" % to_text(repo))
 
             # Retrieve the Github API Releases JSON
             try:
@@ -101,12 +101,15 @@ class LookupModule(LookupBase):
                 if version is not None and len(version) != 0:
                     versions.append(version)
                 else:
-                    raise AnsibleError(
-                        "Error extracting version from Github API response:\n%s" % response.text
+                    raise AnsibleLookupError(
+                        "Error extracting version from Github API response:\n%s"
+                        % to_text(response.text)
                     )
             except JSONDecodeError as e:
-                raise AnsibleError("Error parsing JSON from Github API response: %s" % to_native(e))
+                raise AnsibleLookupError(
+                    "Error parsing JSON from Github API response: %s" % to_native(e)
+                )
 
-            display.vvvv(u"Github version lookup using %s as repo" % repo)
+            display.vvvv(u"Github version lookup using %s as repo" % to_text(repo))
 
         return versions
