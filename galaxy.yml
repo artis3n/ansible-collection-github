@@ -2,7 +2,7 @@
 
 namespace: artis3n
 name: github_version
-version: 1.0.2
+version: 1.0.3
 readme: README.md
 authors:
   - Ari Kalfus (@artis3n) <dev@quantummadness.com>
