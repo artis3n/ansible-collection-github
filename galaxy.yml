@@ -8,7 +8,6 @@ authors:
   - Ari Kalfus (@artis3n) <dev@quantummadness.com>
 description: This lookup returns the latest tagged release version of a Github repository.
 license_file: LICENSE
-dependencies: { }
 tags:
   - github
   - repository
