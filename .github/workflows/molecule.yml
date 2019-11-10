@@ -1,9 +1,9 @@
-name: Test
+name: Molecule Tests
 
 on: [push]
 
 jobs:
-  test:
+  molecule:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1

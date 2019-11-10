@@ -14,8 +14,8 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
-#  env:
-#    - ANSIBLE_COLLECTIONS_PATHS: ~/.ansible/collections
+  env:
+    ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections:~/Nextcloud/Development/collections"
 verifier:
   name: testinfra
   lint:
