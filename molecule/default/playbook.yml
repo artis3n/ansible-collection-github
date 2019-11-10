@@ -8,4 +8,4 @@
   tasks:
     - name: Test the module
       debug:
-        msg: "{{ lookup('latest_release', 'ansible/ansible') }}"
+        msg: "{{ lookup('artis3n.github.latest_release', 'ansible/ansible') }}"
