@@ -1,6 +1,9 @@
 # github_version
 
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fartis3n%2Fgithub_version-ansible_plugin%2Fbadge&style=flat)](https://actions-badge.atrox.dev/artis3n/github_version-ansible_plugin/goto)
+![GitHub](https://img.shields.io/github/license/artis3n/ansible-collection-github)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/artis3n/ansible-collection-github)
+![Twitter Follow](https://img.shields.io/twitter/follow/artis3n?style=social)
 
 You can find this collection on Ansible Galaxy [here](https://galaxy.ansible.com/artis3n/github).
 
