@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+
+  collections:
+    - artis3n.github
+
+  tasks:
+    - name: Test the module
+      debug:
+        msg: "{{ lookup('latest_release', 'ansible/ansible') }}"

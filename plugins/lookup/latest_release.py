@@ -7,7 +7,7 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 DOCUMENTATION = r"""
-lookup: github_version
+lookup: latest_release
 author:
   - Ari Kalfus (@artis3n) <dev@quantummadness.com>
 version_added: "2.9"
@@ -37,12 +37,12 @@ seealso:
 EXAMPLES = r"""
 - name: Strip the 'v' out of the tag version, e.g. 'v1.0.0' -> '1.0.0'
   set_fact:
-    ansible_version: "{{ lookup('github_version', 'ansible/ansible')[1:] }}"
+    ansible_version: "{{ lookup('artis3n.github.latest_release', 'ansible/ansible')[1:] }}"
 
 - name: Operate on multiple repositories
   git:
     repo: https://github.com/{{ item }}.git
-    version: "{{ lookup('github_version', item) }}"
+    version: "{{ lookup('artis3n.github.latest_release', item) }}"
     dest: "{{ lookup('env', 'HOME') }}/projects"
   with_items:
     - ansible/ansible
