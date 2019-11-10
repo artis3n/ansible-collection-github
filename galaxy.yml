@@ -6,7 +6,7 @@ version: 1.0.0
 readme: README.md
 authors:
   - Ari Kalfus (@artis3n) <dev@quantummadness.com>
-description: This lookup returns the latest tagged release version of a Github repository.
+description: This collection contains playbooks, roles, modules, and plugins to manage GitHub tasks.
 license_file: LICENSE
 tags:
   - github
