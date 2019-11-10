@@ -1,0 +1,26 @@
+name: Molecule Tests
+
+on: [push]
+
+jobs:
+  molecule:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.6
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install ansible docker 'molecule[docker]'
+
+    - name: Move project to Ansible-required location
+      run: |
+        mkdir -p ~/.ansible/collections/ansible_collections/artis3n/github
+        cp -r ./ ~/.ansible/collections/ansible_collections/artis3n/github
+
+    - name: Molecule test
+      run: |
+        molecule test

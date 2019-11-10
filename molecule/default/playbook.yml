@@ -1,0 +1,20 @@
+---
+- name: Converge
+  hosts: all
+
+  collections:
+    - artis3n.github
+
+  tasks:
+    - name: latest_release | Get the version
+      uri:
+        url: https://api.github.com/repos/ansible/ansible/releases/latest
+        headers:
+          Accept: application/vnd.github.v3+json
+        body_format: json
+        return_content: yes
+      register: ansible_release
+    - name: latest_release | Test the module
+      assert:
+        that:
+          - lookup('artis3n.github.latest_release', 'ansible/ansible') == ansible_release.json.tag_name

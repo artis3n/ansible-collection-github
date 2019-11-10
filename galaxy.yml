@@ -1,8 +1,8 @@
 ---
 
 namespace: artis3n
-name: github_version
-version: 1.0.3
+name: github
+version: 1.0.0
 readme: README.md
 authors:
   - Ari Kalfus (@artis3n) <dev@quantummadness.com>
@@ -12,6 +12,6 @@ tags:
   - github
   - repository
   - version
-repository: https://github.com/artis3n/github_version-ansible_plugin
-documentation: https://github.com/artis3n/github_version-ansible_plugin
-issues: https://github.com/artis3n/github_version-ansible_plugin/issues
+repository: https://github.com/artis3n/ansible-collection-github
+documentation: https://github.com/artis3n/ansible-collection-github
+issues: https://github.com/artis3n/ansible-collection-github/issues
