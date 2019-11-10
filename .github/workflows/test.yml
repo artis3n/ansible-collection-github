@@ -18,8 +18,10 @@ jobs:
 
     - name: Move project to Ansible-required location
       run: |
+        mkdir -p ~/.ansible/collections/ansible_collections/artis3n/github
         cp -r ./ ~/.ansible/collections/ansible_collections/artis3n/github
 
     - name: Molecule test
       run: |
+        ansible-doc -t lookup latest_release
         molecule test
