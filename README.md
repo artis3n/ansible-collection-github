@@ -2,10 +2,7 @@
 
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fartis3n%2Fgithub_version-ansible_plugin%2Fbadge&style=flat)](https://actions-badge.atrox.dev/artis3n/github_version-ansible_plugin/goto)
 
-You can find this collection on Ansible Galaxy [here](https://galaxy.ansible.com/artis3n/github_version).
-
-This collection includes a single lookup plugin that returns the latest tagged release version of a public Github repository.
-A future version will support a Github token as an environment variable to work against private repositories.
+You can find this collection on Ansible Galaxy [here](https://galaxy.ansible.com/artis3n/github).
 
 ## Usage
 
@@ -70,6 +67,20 @@ Note: `[1:]` is used to strip out the `v` in the version tag, e.g. `v1.1.0` beco
   register: terraform_download
 ```
 </details>
+
+## Contents
+
+This collection includes the following items related to interacting with GitHub:
+
+### Plugins
+
+#### Lookup plugins
+
+##### latest_release
+
+This lookup plugin retrieves the latest tagged release version of a public Github repository.
+
+A future version will support a Github token as an environment variable to work against private repositories.
 
 ## Development
 
