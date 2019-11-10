@@ -100,6 +100,33 @@ tasks:
 
 ## Development
 
+Ansible has very strict expectations for where to look for a collection. There are [open issues][] against Ansible to change this behavior to make local testing easier. However for the time being, you must do the following.
+
+You can modify the `ANSIBLE_COLLECTIONS_PATHS` environment variable to add custom paths for Ansible to search for collections, however collections **must** be in the following format _at the directory location specified in `ANSIBLE_COLLECTIONS_PATHS`_:
+
+```text
+collection/
+├── ansible_collections/
+│   ├── <namespace, e.g. artis3n>/
+│   │   ├── <collection name, e.g. github>/
+|   |   |   ├── plugins/
+|   |   |   |   ├── lookup/
+|   |   |   |   |   └── .../
+|   |   |   └── .../
+```
+
+So, you _must_ clone this repository to a location under `collection/ansible_collections/` and modify `ANSIBLE_COLLECTIONS_PATHS` to include that absolute path in order for `molecule test` to find this collection.
+
+You will notice that in `molecule/default/molecule.yml` I hard-code my personal directory in order to easily run molecule tests:
+
+```yaml
+ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections:~/Nextcloud/Development/collections"
+```
+ 
+ I don't have a good way of writing something in code that can apply more generally due to the way Ansible currently handles collections so you'll likely need to override that to test this locally.
+
+Alternatively, you can submit a draft pull request to this repository and a GitHub Actions workflow will trigger and run `molecule test` on your pull request.
+
 ### TODO
 
 - [x] Tests :grimacing:
@@ -118,3 +145,4 @@ This repository uses [Github Actions][] to build and publish new releases to [An
 [github marketplace]: https://github.com/marketplace/actions/deploy-ansible-galaxy-collection
 [geerlingguy molecule]: https://www.jeffgeerling.com/blog/2019/how-add-integration-tests-ansible-collection-molecule
 [molecule official]: https://molecule.readthedocs.io/en/stable/
+[open issues]: https://github.com/ansible/ansible/issues/60215
