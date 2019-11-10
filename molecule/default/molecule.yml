@@ -14,8 +14,8 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
-  env:
-    - ANSIBLE_COLLECTIONS_PATH: ~/.ansible/collections
+#  env:
+#    - ANSIBLE_COLLECTIONS_PATHS: ~/.ansible/collections
 verifier:
   name: testinfra
   lint:
