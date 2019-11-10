@@ -23,5 +23,4 @@ jobs:
 
     - name: Molecule test
       run: |
-        ansible-doc -t lookup artis3n.github.latest_release
         molecule test
