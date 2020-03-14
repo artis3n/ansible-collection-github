@@ -9,18 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Python 3
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install ansible
+    - uses: actions/checkout@v2
 
     - name: Deploy the collection
-      uses: artis3n/ansible_galaxy_collection@v1
+      uses: artis3n/ansible_galaxy_collection@v2
       with:
         api_key: ${{ secrets.GALAXY_API_KEY }}
