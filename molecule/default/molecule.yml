@@ -3,8 +3,11 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
 platforms:
   - name: instance
     image: geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1804}-ansible:latest
@@ -12,14 +15,12 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
   env:
-    ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections:~/Nextcloud/Development/collections"
+    ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections:~/Dropbox/Development/collections"
 verifier:
-  name: testinfra
-  lint:
-    name: flake8
+  name: ansible
+  env:
+    ANSIBLE_COLLECTIONS_PATHS: "~/.ansible/collections:~/Dropbox/Development/collections"
 scenario:
   name: default
   test_sequence:

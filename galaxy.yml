@@ -5,7 +5,7 @@ name: github
 version: 1.0.0
 readme: README.md
 authors:
-  - Ari Kalfus (@artis3n) <dev@quantummadness.com>
+  - Ari Kalfus (@artis3n) <dev@artis3nal.com>
 description: This collection contains playbooks, roles, modules, and plugins to manage GitHub tasks.
 license_file: LICENSE
 tags:
