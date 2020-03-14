@@ -8,6 +8,8 @@ ansible-lint = "*"
 docker = "*"
 molecule = {extras = ["docker"],version = "*"}
 pre-commit = "*"
+yamllint = "*"
+flake8 = "*"
 
 [packages]
 ansible = "*"
